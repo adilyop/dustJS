@@ -1,0 +1,26 @@
+{
+  "name": "testigo",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "eslint": "eslint ./app ./test",
+    "nodemon": "nodemon app.js",
+    "start": "npm-run-all --parallel nodemon webpack",
+    "webpack": "webpack serve --mode=development",
+    "webpack-prod": "webpack --mode=production",
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dustjs-linkedin": "^3.0.1",
+    "igo": "4.5.3"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "6.5.1",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "4.6.2",
+    "jquery": "3.7.1"
+  }
+}

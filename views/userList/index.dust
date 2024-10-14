@@ -1,0 +1,97 @@
+
+
+
+<script>
+  // Get the modal
+  var modal = document.getElementById("myModal");
+
+  // Get the button that opens the modal
+  var btn = document.getElementById("openModalBtn");
+
+  console.log('btn ', btn)
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  function good() {
+    console.log('gooden')
+  }
+  // When the user clicks the button, open the modal 
+  btn.onclick = function() {
+    console.log('test modal')
+      modal.style.display = "flex";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+      modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+
+    btn.onclick = function () {
+        alert("Button Clicked!");
+    };
+
+</script>
+
+{> "layouts/main" /}
+
+
+{<content}
+
+
+  <div class="container">
+    <div class="p-5 my-5 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <div class="d-flex m-4">
+
+    <h1>Product List</h1>
+    <button class="btn btn-primary btn-lg" type="button" id="openModalBtn">New product</button>
+        </div>
+
+
+
+        <!-- The Modal -->
+    <div id="myModal" class="d-modal">
+      <!-- Modal content -->
+      <div class="d-modal-content">
+          <span class="d-close">&times;</span>
+          <p>This is a modal window.</p>
+      </div>
+  </div>
+
+
+    <table class="d-table">
+        <thead>
+            <tr >
+                <th  class="d-th">Name</th>
+                <th class="d-th">Price</th>
+                <th class="d-th">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {#products}
+              <tr>
+                <td class="d-td">{.name}</td>
+                <td class="d-td">${.price}</td>
+                <td class="d-td">{.description}</td>
+            </tr>
+            {/products}
+        </tbody>
+    </table>
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+{/content}
+
+
